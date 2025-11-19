@@ -20,7 +20,7 @@ void SheetPlayer::play()
             tonePlayer->stopPlaying(); 
             continue;
         }
-        SheetNote& sheetNote = sheet.noteArray[sheet.currentNoteIndex];
+        const SheetNote& sheetNote = sheet.noteArray[sheet.currentNoteIndex];
         
         if (sheet.isCurrentNoteActivated)
         {

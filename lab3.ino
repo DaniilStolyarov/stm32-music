@@ -39,7 +39,7 @@ int noteArr[7] = {
 void SpawnRectangle(int sheetIndex)
 {
     if (sheetIndex != 1) return;
-    SheetNote& note = sheetPlayer->sheets[sheetIndex].noteArray[sheetPlayer->sheets[sheetIndex].currentNoteIndex];
+    const SheetNote& note = sheetPlayer->sheets[sheetIndex].noteArray[sheetPlayer->sheets[sheetIndex].currentNoteIndex];
     Rectangle* rect = new Rectangle(&tft, Vector2f{RECT_WIDTH * (float)((int)note.noteOffset - (int)NoteOffset::C) + RECT_WIDTH / 2, tft.height() - (512/(note.len) + 20)}, Vector2f{RECT_WIDTH, 256/(note.len)});
     rect->velocity = Vector2f{0, -500};
     rect->color = noteColors[(int)note.noteOffset - (int)NoteOffset::C];

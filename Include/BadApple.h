@@ -12,7 +12,7 @@ typedef struct BadAppleArrangement
 BadAppleArrangement* BadAppleSong()
 {
     using N = SheetNote;
-    static SheetNote topNoteArray[] =
+    static const SheetNote topNoteArray[] =
         {
             N(8, Octave::Great, NoteOffset::Ds),
             N(16, Octave::Great, NoteOffset::Ds), 
@@ -365,9 +365,112 @@ BadAppleArrangement* BadAppleSong()
             N(8, Octave::Small, NoteOffset::Cs),
             N(4, Octave::Small, NoteOffset::Ds), 
             N(4), // 40
-            
 
+            N(8, Octave::Great, NoteOffset::Ds),
+            N(16, Octave::Great, NoteOffset::Ds), 
+            N(8, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Cs),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(8, Octave::Great, NoteOffset::Ds),
+            N(16, Octave::Great, NoteOffset::Ds),
+            N(8, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Cs),
+            N(16, Octave::Small, NoteOffset::Ds), // 41
+
+            N(8, Octave::Great, NoteOffset::Ds),
+            N(16, Octave::Great, NoteOffset::Ds),
+            N(8, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Cs),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(8, Octave::Great, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Fs),
+            N(8, Octave::Great, NoteOffset::Fs),
+            N(16, Octave::Small, NoteOffset::Fs),
+            N(16, Octave::Small, NoteOffset::Gs), // 42
+
+            N(8, Octave::Great, NoteOffset::Ds),
+            N(16, Octave::Great, NoteOffset::Ds),
+            N(8, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Cs),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(8, Octave::Great, NoteOffset::Ds),
+            N(16, Octave::Great, NoteOffset::Ds),
+            N(8, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Cs),
+            N(16, Octave::Small, NoteOffset::Ds), // 43
+
+            N(8, Octave::Great, NoteOffset::Ds),
+            N(16, Octave::Great, NoteOffset::Ds),
+            N(8, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Cs),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(8, Octave::Great, NoteOffset::Gs),
+            N(16, Octave::Small, NoteOffset::Fs),
+            N(16, Octave::Small, NoteOffset::Gs),
+            N(8, Octave::Great, NoteOffset::Fs),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Fs), // 44
+
+            N(8, Octave::Great, NoteOffset::Ds),
+            N(16, Octave::Great, NoteOffset::Ds),
+            N(8, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Cs),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(8, Octave::Great, NoteOffset::Ds),
+            N(16, Octave::Great, NoteOffset::Ds),
+            N(8, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Cs),
+            N(16, Octave::Small, NoteOffset::Ds), // 45
+
+            N(8, Octave::Great, NoteOffset::Ds),
+            N(16, Octave::Great, NoteOffset::Ds),
+            N(8, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Cs),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(8, Octave::Great, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Fs),
+            N(8, Octave::Great, NoteOffset::Fs),
+            N(16, Octave::Small, NoteOffset::Fs),
+            N(16, Octave::Small, NoteOffset::Gs), // 46
+
+            N(8, Octave::Great, NoteOffset::Ds),
+            N(16, Octave::Great, NoteOffset::Ds),
+            N(8, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Cs),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(8, Octave::Great, NoteOffset::Ds),
+            N(16, Octave::Great, NoteOffset::Ds),
+            N(8, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Cs),
+            N(16, Octave::Small, NoteOffset::Ds), // 47
+
+            N(8, Octave::Great, NoteOffset::Ds),
+            N(16, Octave::Great, NoteOffset::Ds),
+            N(8, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Cs),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(8, Octave::Great, NoteOffset::Gs),
+            N(16, Octave::Small, NoteOffset::Fs),
+            N(16, Octave::Small, NoteOffset::Gs),
+            N(8, Octave::Great, NoteOffset::Fs),
+            N(16, Octave::Small, NoteOffset::Ds),
+            N(16, Octave::Small, NoteOffset::Fs), // 48
             
+            N(1, Octave::Small, NoteOffset::Ds) // 49
 
         };
     Sheet topSheet = {
@@ -375,7 +478,7 @@ BadAppleArrangement* BadAppleSong()
     };
 
     // ___________________
-    static SheetNote bottomNoteArray[]
+    static const SheetNote bottomNoteArray[]
     {
         N(1), // 1
         N(1), // 2
@@ -632,77 +735,152 @@ BadAppleArrangement* BadAppleSong()
         N(8, Octave::Small, NoteOffset::Ds),
         N(8, Octave::Great, NoteOffset::As), // 32
 
-        // N(8, Octave::Great, NoteOffset::B),
-        // N(8, Octave::Great, NoteOffset::Fs),
-        // N(8, Octave::Small, NoteOffset::B),
-        // N(8, Octave::Great, NoteOffset::Fs),
-        // N(8, Octave::Great, NoteOffset::B),
-        // N(8, Octave::Great, NoteOffset::Fs),
-        // N(8, Octave::Small, NoteOffset::B),
-        // N(8, Octave::Great, NoteOffset::Fs), // 33
+        N(8, Octave::Great, NoteOffset::B),
+        N(8, Octave::Great, NoteOffset::Fs),
+        N(8, Octave::Small, NoteOffset::B),
+        N(8, Octave::Great, NoteOffset::Fs),
+        N(8, Octave::Great, NoteOffset::B),
+        N(8, Octave::Great, NoteOffset::Fs),
+        N(8, Octave::Small, NoteOffset::B),
+        N(8, Octave::Great, NoteOffset::Fs), // 33
 
-        // N(8, Octave::Great, NoteOffset::Cs),
-        // N(8, Octave::Great, NoteOffset::Gs),
-        // N(8, Octave::Small, NoteOffset::Cs),
-        // N(8, Octave::Great, NoteOffset::Gs),
-        // N(8, Octave::Great, NoteOffset::Cs),
-        // N(8, Octave::Great, NoteOffset::Gs),
-        // N(8, Octave::Small, NoteOffset::Cs),
-        // N(8, Octave::Great, NoteOffset::Gs), // 34
+        N(8, Octave::Great, NoteOffset::Cs),
+        N(8, Octave::Great, NoteOffset::Gs),
+        N(8, Octave::Small, NoteOffset::Cs),
+        N(8, Octave::Great, NoteOffset::Gs),
+        N(8, Octave::Great, NoteOffset::Cs),
+        N(8, Octave::Great, NoteOffset::Gs),
+        N(8, Octave::Small, NoteOffset::Cs),
+        N(8, Octave::Great, NoteOffset::Gs), // 34
 
-        // N(8, Octave::Great, NoteOffset::Ds),
-        // N(8, Octave::Great, NoteOffset::As),
-        // N(8, Octave::Small, NoteOffset::Ds),
-        // N(8, Octave::Great, NoteOffset::As),
-        // N(8, Octave::Great, NoteOffset::Ds),
-        // N(8, Octave::Great, NoteOffset::As),
-        // N(8, Octave::Small, NoteOffset::Ds),
-        // N(8, Octave::Great, NoteOffset::As), // 35
+        N(8, Octave::Great, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(8, Octave::Small, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(8, Octave::Great, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(8, Octave::Small, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As), // 35
 
-        // N(8, Octave::Great, NoteOffset::Ds),
-        // N(8, Octave::Great, NoteOffset::As),
-        // N(8, Octave::Small, NoteOffset::Ds),
-        // N(8, Octave::Great, NoteOffset::As),
-        // N(8, Octave::Great, NoteOffset::Ds),
-        // N(8, Octave::Great, NoteOffset::As),
-        // N(8, Octave::Small, NoteOffset::Ds),
-        // N(8, Octave::Great, NoteOffset::As), // 36
+        N(8, Octave::Great, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(8, Octave::Small, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(8, Octave::Great, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(8, Octave::Small, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As), // 36
 
-        // N(8, Octave::Great, NoteOffset::B),
-        // N(8, Octave::Great, NoteOffset::Fs),
-        // N(8, Octave::Small, NoteOffset::B),
-        // N(8, Octave::Great, NoteOffset::Fs),
-        // N(8, Octave::Great, NoteOffset::B),
-        // N(8, Octave::Great, NoteOffset::Fs),
-        // N(8, Octave::Small, NoteOffset::B),
-        // N(8, Octave::Great, NoteOffset::Fs), // 37
+        N(8, Octave::Great, NoteOffset::B),
+        N(8, Octave::Great, NoteOffset::Fs),
+        N(8, Octave::Small, NoteOffset::B),
+        N(8, Octave::Great, NoteOffset::Fs),
+        N(8, Octave::Great, NoteOffset::B),
+        N(8, Octave::Great, NoteOffset::Fs),
+        N(8, Octave::Small, NoteOffset::B),
+        N(8, Octave::Great, NoteOffset::Fs), // 37
 
-        // N(8, Octave::Great, NoteOffset::Cs),
-        // N(8, Octave::Great, NoteOffset::Gs),
-        // N(8, Octave::Small, NoteOffset::Cs),
-        // N(8, Octave::Great, NoteOffset::Gs),
-        // N(8, Octave::Great, NoteOffset::Cs),
-        // N(8, Octave::Great, NoteOffset::Gs),
-        // N(8, Octave::Small, NoteOffset::Cs),
-        // N(8, Octave::Great, NoteOffset::Gs), // 38
+        N(8, Octave::Great, NoteOffset::Cs),
+        N(8, Octave::Great, NoteOffset::Gs),
+        N(8, Octave::Small, NoteOffset::Cs),
+        N(8, Octave::Great, NoteOffset::Gs),
+        N(8, Octave::Great, NoteOffset::Cs),
+        N(8, Octave::Great, NoteOffset::Gs),
+        N(8, Octave::Small, NoteOffset::Cs),
+        N(8, Octave::Great, NoteOffset::Gs), // 38
 
-        // N(8, Octave::Great, NoteOffset::Ds),
-        // N(8, Octave::Great, NoteOffset::As),
-        // N(8, Octave::Small, NoteOffset::Ds),
-        // N(8, Octave::Great, NoteOffset::As),
-        // N(8, Octave::Great, NoteOffset::Ds),
-        // N(8, Octave::Great, NoteOffset::As),
-        // N(8, Octave::Small, NoteOffset::Ds),
-        // N(8, Octave::Great, NoteOffset::As), // 39
+        N(1, Octave::Great, NoteOffset::Ds, true), // 39
+        N(2, Octave::Great, NoteOffset::Ds), 
 
-        // N(8, Octave::Great, NoteOffset::Ds),
-        // N(8, Octave::Great, NoteOffset::As),
-        // N(8, Octave::Small, NoteOffset::Ds),
-        // N(8, Octave::Great, NoteOffset::As),
-        // N(8, Octave::Great, NoteOffset::Ds),
-        // N(8, Octave::Great, NoteOffset::As),
-        // N(8, Octave::Small, NoteOffset::Ds),
-        // N(8, Octave::Great, NoteOffset::As), // 40
+        N(4, Octave::Small, NoteOffset::Gs), 
+        N(4, Octave::Small, NoteOffset::Fs), // 40
+
+        N(8, Octave::Contra, NoteOffset::Ds),
+        N(16, Octave::Contra, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(16, Octave::Great, NoteOffset::As),
+        N(8),
+        N(8, Octave::Contra, NoteOffset::Ds),
+        N(16, Octave::Contra, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(16, Octave::Great, NoteOffset::As),
+        N(8), // 41
+
+        N(8, Octave::Contra, NoteOffset::Ds),
+        N(16, Octave::Contra, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(16, Octave::Great, NoteOffset::As),
+        N(8),
+        N(8, Octave::Contra, NoteOffset::Ds),
+        N(8),
+        N(8, Octave::Contra, NoteOffset::Fs),
+        N(8), // 42
+
+        N(8, Octave::Contra, NoteOffset::Ds),
+        N(16, Octave::Contra, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(16, Octave::Great, NoteOffset::As),
+        N(8),
+        N(8, Octave::Contra, NoteOffset::Ds),
+        N(16, Octave::Contra, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(16, Octave::Great, NoteOffset::As),
+        N(8), // 43
+
+        N(8, Octave::Contra, NoteOffset::Ds),
+        N(16, Octave::Contra, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(16, Octave::Great, NoteOffset::As),
+        N(8),
+        N(8, Octave::Contra, NoteOffset::Gs),
+        N(8),
+        N(8, Octave::Contra, NoteOffset::Fs),
+        N(8), // 44
+
+        N(8, Octave::Contra, NoteOffset::Ds),
+        N(16, Octave::Contra, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(16, Octave::Great, NoteOffset::As),
+        N(8),
+        N(8, Octave::Contra, NoteOffset::Ds),
+        N(16, Octave::Contra, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(16, Octave::Great, NoteOffset::As),
+        N(8), // 45
+
+        N(8, Octave::Contra, NoteOffset::Ds),
+        N(16, Octave::Contra, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(16, Octave::Great, NoteOffset::As),
+        N(8),
+        N(8, Octave::Contra, NoteOffset::Ds),
+        N(8),
+        N(8, Octave::Contra, NoteOffset::Fs),
+        N(8), // 46
+
+        N(8, Octave::Contra, NoteOffset::Ds),
+        N(16, Octave::Contra, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(16, Octave::Great, NoteOffset::As),
+        N(8),
+        N(8, Octave::Contra, NoteOffset::Ds),
+        N(16, Octave::Contra, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(16, Octave::Great, NoteOffset::As),
+        N(8), // 47 
+
+        N(8, Octave::Contra, NoteOffset::Ds),
+        N(16, Octave::Contra, NoteOffset::Ds),
+        N(8, Octave::Great, NoteOffset::As),
+        N(16, Octave::Great, NoteOffset::As),
+        N(8),
+        N(8, Octave::Contra, NoteOffset::Gs),
+        N(8),
+        N(8, Octave::Contra, NoteOffset::Fs),
+        N(8), // 48
+
+
+        N(1, Octave::Contra, NoteOffset::Ds) // 49
 
     };
    

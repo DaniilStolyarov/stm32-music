@@ -9,7 +9,7 @@ typedef struct Sheet
 {
     uint32_t currentNoteTimestamp = 0;
     int currentNoteIndex = 0;
-    SheetNote* noteArray;
+    const SheetNote* noteArray;
     int noteCount;
     bool isCurrentNoteActivated = false;
 };
@@ -22,7 +22,7 @@ private:
     
     NoteDef* noteDef;
     int beat = 2048;
-    int transitionDelay = 30;
+    int transitionDelay = 32;
 public:
     Sheet* sheets;
     SheetPlayer(int _sheetCount, TonePlayer** _tonePlayers, Sheet* _sheets);
