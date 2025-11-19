@@ -14,8 +14,5 @@ public:
     NoteOffset noteOffset;
     SheetNote(int _len, Octave _octave, NoteOffset _noteOffset, bool _smoothTransition=false);
     SheetNote(int _len);
-    void setActive();
-    bool isActivated();
-    
 };
 #endif // SHEET_H

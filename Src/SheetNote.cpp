@@ -16,13 +16,3 @@ SheetNote::SheetNote(int _len)
     len = _len;
     isPause = true;
 }
-
-void SheetNote::setActive()
-{
-    activated = true;
-}
-
-bool SheetNote::isActivated()
-{
-    return activated;
-}

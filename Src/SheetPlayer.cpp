@@ -22,7 +22,7 @@ void SheetPlayer::play()
         }
         SheetNote& sheetNote = sheet.noteArray[sheet.currentNoteIndex];
         
-        if (sheetNote.isActivated())
+        if (sheet.isCurrentNoteActivated)
         {
             if (!sheetNote.smoothTransition && ((millis() - sheet.currentNoteTimestamp) > (beat / sheetNote.len - transitionDelay)))
             {
@@ -32,6 +32,7 @@ void SheetPlayer::play()
             {
                 sheet.currentNoteIndex++;
                 sheet.currentNoteTimestamp += (beat / sheetNote.len);
+                sheet.isCurrentNoteActivated = false;
             }
             continue;
         }
@@ -50,8 +51,7 @@ void SheetPlayer::play()
                     afterNotePlayed(sheetIndex);
                 }
             }
-            //sheet.currentNoteTimestamp = millis();
-            sheetNote.setActive();
+            sheet.isCurrentNoteActivated = true;
         }
     }
 }

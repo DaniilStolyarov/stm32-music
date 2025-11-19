@@ -11,6 +11,7 @@ typedef struct Sheet
     int currentNoteIndex = 0;
     SheetNote* noteArray;
     int noteCount;
+    bool isCurrentNoteActivated = false;
 };
 
 class SheetPlayer

@@ -371,7 +371,7 @@ BadAppleArrangement* BadAppleSong()
 
         };
     Sheet topSheet = {
-        0, 0, topNoteArray, sizeof(topNoteArray) / sizeof(N)
+        0, 0, topNoteArray, sizeof(topNoteArray) / sizeof(N), false
     };
 
     // ___________________
@@ -707,7 +707,7 @@ BadAppleArrangement* BadAppleSong()
     };
    
     Sheet bottomSheet = {
-        0, 0, bottomNoteArray, sizeof(bottomNoteArray) / sizeof(N)
+        0, 0, bottomNoteArray, sizeof(bottomNoteArray) / sizeof(N), false
     };
     Sheet* sheetArray = new Sheet[2]{bottomSheet, topSheet};
 
