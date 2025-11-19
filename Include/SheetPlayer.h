@@ -21,10 +21,11 @@ private:
     TonePlayer** tonePlayers;
     
     NoteDef* noteDef;
-    int beat = 2048;
+
     int transitionDelay = 32;
 public:
     Sheet* sheets;
+    int beat = 1792;
     SheetPlayer(int _sheetCount, TonePlayer** _tonePlayers, Sheet* _sheets);
     void play();
     void (*afterNotePlayed)(int sheetIndex);

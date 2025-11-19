@@ -14,6 +14,8 @@ BadAppleArrangement* BadAppleSong()
     using N = SheetNote;
     static const SheetNote topNoteArray[] =
         {
+            N(1), // 0
+            //////////////
             N(8, Octave::Great, NoteOffset::Ds),
             N(16, Octave::Great, NoteOffset::Ds), 
             N(8, Octave::Small, NoteOffset::Ds),
@@ -138,8 +140,8 @@ BadAppleArrangement* BadAppleSong()
             N(8, Octave::Small, NoteOffset::Fs),
             N(8, Octave::Small, NoteOffset::Gs),
             N(4, Octave::Small, NoteOffset::As),
-            N(8, Octave::One, NoteOffset::Gs),
-            N(8, Octave::One, NoteOffset::Fs), // 11
+            N(8, Octave::Small, NoteOffset::Gs),
+            N(8, Octave::Small, NoteOffset::Fs), // 11
 
             N(8, Octave::Small, NoteOffset::F),
             N(8, Octave::Small, NoteOffset::Ds),
@@ -170,8 +172,8 @@ BadAppleArrangement* BadAppleSong()
             N(8, Octave::Small, NoteOffset::Fs),
             N(8, Octave::Small, NoteOffset::Gs),
             N(4, Octave::Small, NoteOffset::As),
-            N(8, Octave::One, NoteOffset::Gs),
-            N(8, Octave::One, NoteOffset::Fs), // 15
+            N(8, Octave::Small, NoteOffset::Gs),
+            N(8, Octave::Small, NoteOffset::Fs), // 15
 
             N(4, Octave::Small, NoteOffset::F),
             N(4, Octave::Small, NoteOffset::Fs),
@@ -198,8 +200,8 @@ BadAppleArrangement* BadAppleSong()
             N(8, Octave::Small, NoteOffset::Fs),
             N(8, Octave::Small, NoteOffset::Gs),
             N(4, Octave::Small, NoteOffset::As),
-            N(8, Octave::One, NoteOffset::Gs),
-            N(8, Octave::One, NoteOffset::Fs), // 19
+            N(8, Octave::Small, NoteOffset::Gs),
+            N(8, Octave::Small, NoteOffset::Fs), // 19
 
             N(8, Octave::Small, NoteOffset::F),
             N(8, Octave::Small, NoteOffset::Ds),
@@ -230,8 +232,8 @@ BadAppleArrangement* BadAppleSong()
             N(8, Octave::Small, NoteOffset::Fs),
             N(8, Octave::Small, NoteOffset::Gs),
             N(4, Octave::Small, NoteOffset::As),
-            N(8, Octave::One, NoteOffset::Gs),
-            N(8, Octave::One, NoteOffset::Fs), // 23
+            N(8, Octave::Small, NoteOffset::Gs),
+            N(8, Octave::Small, NoteOffset::Fs), // 23
 
             N(4, Octave::Small, NoteOffset::F),
             N(4, Octave::Small, NoteOffset::Fs),
@@ -480,6 +482,8 @@ BadAppleArrangement* BadAppleSong()
     // ___________________
     static const SheetNote bottomNoteArray[]
     {
+        N(1), // 0
+        ////////////////////////////
         N(1), // 1
         N(1), // 2
         N(1), // 3
@@ -792,8 +796,8 @@ BadAppleArrangement* BadAppleSong()
         N(1, Octave::Great, NoteOffset::Ds, true), // 39
         N(2, Octave::Great, NoteOffset::Ds), 
 
-        N(4, Octave::Small, NoteOffset::Gs), 
-        N(4, Octave::Small, NoteOffset::Fs), // 40
+        N(4, Octave::Great, NoteOffset::Gs), 
+        N(4, Octave::Great, NoteOffset::Fs), // 40
 
         N(8, Octave::Contra, NoteOffset::Ds),
         N(16, Octave::Contra, NoteOffset::Ds),

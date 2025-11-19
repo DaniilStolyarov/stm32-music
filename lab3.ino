@@ -41,7 +41,7 @@ void SpawnRectangle(int sheetIndex)
     if (sheetIndex != 1) return;
     const SheetNote& note = sheetPlayer->sheets[sheetIndex].noteArray[sheetPlayer->sheets[sheetIndex].currentNoteIndex];
     Rectangle* rect = new Rectangle(&tft, Vector2f{RECT_WIDTH * (float)((int)note.noteOffset - (int)NoteOffset::C) + RECT_WIDTH / 2, tft.height() - (512/(note.len) + 20)}, Vector2f{RECT_WIDTH, 256/(note.len)});
-    rect->velocity = Vector2f{0, -500};
+    rect->velocity = Vector2f{0, (-1.0f)*200};
     rect->color = noteColors[(int)note.noteOffset - (int)NoteOffset::C];
     rectList->push(rect);
 }
@@ -50,11 +50,6 @@ void setup()
 {
     tonePlayer1.init();
     tonePlayer2.init();
-
-    TonePlayer** tonePlayers = new TonePlayer*[2]{&tonePlayer1, &tonePlayer2};
-    BadAppleArrangement* arrangement = BadAppleSong();
-    sheetPlayer = new SheetPlayer(arrangement->sheetCount, tonePlayers, arrangement->sheetArray);
-    sheetPlayer->afterNotePlayed = SpawnRectangle;
     
     uint16_t ID = tft.readID();
     tft.begin(ID);
@@ -72,6 +67,11 @@ void setup()
 
         tft.drawRect(RECT_WIDTH * i, tft.height() - 30, RECT_WIDTH, 30, noteColors[i]);
     }
+
+    TonePlayer** tonePlayers = new TonePlayer*[2]{&tonePlayer1, &tonePlayer2};
+    BadAppleArrangement* arrangement = BadAppleSong();
+    sheetPlayer = new SheetPlayer(arrangement->sheetCount, tonePlayers, arrangement->sheetArray);
+    sheetPlayer->afterNotePlayed = SpawnRectangle;
 }
 
 void loop()

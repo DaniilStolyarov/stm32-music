@@ -25,7 +25,7 @@ void TonePlayer::playTone(uint32_t freq) {
 
     __HAL_TIM_SET_PRESCALER(&htim, prescaler);
     __HAL_TIM_SET_AUTORELOAD(&htim, arr);
-    __HAL_TIM_SET_COMPARE(&htim, TIM_CHANNEL_2, arr / 4);
+    __HAL_TIM_SET_COMPARE(&htim, TIM_CHANNEL_2, arr / 2);
 }
 
 
