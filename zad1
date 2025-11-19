@@ -1,0 +1,83 @@
+#include <MCUFRIEND_kbv.h>
+#include "include/Input.h"
+
+MCUFRIEND_kbv tft;
+Input input;
+Vector2f displaySize;
+Vector2f labelPosition;
+Vector2f prevLabelPosition;
+
+uint16_t BACKGROUND_COLOR = TFT_BLACK;
+uint16_t FOCUS_COLOR = TFT_YELLOW;
+
+Vector2f* LinePoints;
+bool operator==(const Vector2f& a, const Vector2f& b)
+{
+    return (a.x == b.x) && (a.y == b.y);
+}
+
+void print(Vector2f* vec)
+{
+    Serial.printf("{%d, %d}", vec->x, vec->y);
+}
+void updateLineData()
+{
+    LinePoints[1] = labelPosition;
+    tft.drawLine(LinePoints[0].x, LinePoints[0].y, LinePoints[1].x, LinePoints[1].y, FOCUS_COLOR);
+    Serial.println("Something Happened!");
+    print(&LinePoints[0]); Serial.print(" ");
+    print(&LinePoints[1]); Serial.println();
+    LinePoints[0] = LinePoints[1];
+}
+void setup()
+{
+    Serial.begin(9600);
+    Serial.println("Hello from STM32!");
+    pinMode(LED_BUILTIN, OUTPUT);
+
+    uint16_t ID = tft.readID();
+    tft.begin(ID);
+    Serial.print(ID);
+    displaySize.x = tft.width();
+    displaySize.y = tft.height();
+
+    tft.setRotation(0);
+    tft.fillScreen(BACKGROUND_COLOR);
+
+    labelPosition.x = 40, labelPosition.y = 40;
+    LinePoints = new Vector2f[2];
+
+    input.SetCustomClickCallback(updateLineData);
+}
+
+int radius = 10;
+int combo = 0;
+int acceleration;
+void loop()
+{
+    Vector2f axes = input.readAxes();
+
+    acceleration = constrain(combo / 30, 1, radius);
+
+    labelPosition.x += axes.x * acceleration; 
+    labelPosition.y += axes.y * acceleration;
+
+    labelPosition.x = constrain(labelPosition.x, 0, displaySize.x);
+    labelPosition.y = constrain(labelPosition.y, 0, displaySize.y);
+    
+    if (!(prevLabelPosition == labelPosition))
+    {
+        //tft.drawPixel(prevLabelPosition.x, prevLabelPosition.y, BACKGROUND_COLOR);
+        tft.drawCircle(prevLabelPosition.x, prevLabelPosition.y , radius, BACKGROUND_COLOR);
+        combo += 1;
+    }
+    else combo=0;
+    //tft.drawPixel(labelPosition.x, labelPosition.y, FOCUS_COLOR);
+    tft.drawCircle(labelPosition.x, labelPosition.y , radius, FOCUS_COLOR);
+    prevLabelPosition = labelPosition;
+
+    //Serial.printf("X: %d Y: %d\n", labelPosition.x, labelPosition.y);
+    // end loop
+    digitalToggle(LED_BUILTIN);
+    delay(15);
+}

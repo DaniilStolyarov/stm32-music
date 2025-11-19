@@ -1,0 +1,26 @@
+#include <MCUFRIEND_kbv.h>
+
+MCUFRIEND_kbv tft;
+void setup() {
+    pinMode(PA5, OUTPUT);
+    Serial.begin(9600);
+    Serial.println("Hello from STM32!");
+    uint16_t ID = tft.readID();
+    tft.begin(ID);
+    int width = tft.width();
+    int height = tft.height();
+
+    tft.setRotation(0);
+    tft.fillScreen(TFT_BLACK);
+    
+    tft.setTextSize(2);
+    tft.setTextColor(TFT_WHITE);
+    tft.setCursor(40, 40);
+    tft.print("Hello, RTU MIREA!");
+}
+
+void loop() {
+    digitalToggle(PA5);
+    
+    delay(100);
+}
