@@ -14,7 +14,7 @@ NoteDef::NoteDef()
 int NoteDef::calcNoteFreq(Octave octave, NoteOffset noteOffset)
 {
     float precise = A0_freq * powf(2.0f, ((float)noteOffset + ((float)octave) * 12) / 12);
-    Serial.println((int)(roundf(precise) + 0.1f));
+    //Serial.println((int)(roundf(precise) + 0.1f));
     
     return (int)(roundf(precise) + 0.1f);
 }

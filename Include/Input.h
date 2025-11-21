@@ -10,6 +10,8 @@
 void handleClickCallback();
 class Input 
 {
+private: 
+    static constexpr float noiseThreshold = 0.035f; 
 public:
     static Input* Instance;
     uint32_t LastClickTimestamp;

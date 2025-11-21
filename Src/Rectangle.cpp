@@ -22,25 +22,22 @@ void Rectangle::update()
         tft->fillRect(x, (uint16_t)floor(y + size.y - abs(movement.y)), (int)size.x+1, ceil(abs(movement.y)), background);
        
     }
-   
     
     position = position + movement;
     updateTimestamp = millis();
 
-    uint16_t x = round(position.x - (size.x / 2));
-    uint16_t y = round(position.y - (size.y / 2));
-
-    if (isInRange())
+    int x = round(position.x - (size.x / 2));
+    int y = round(position.y - (size.y / 2));
+    
+    if (isInRange() && movement != Vector2f{0,0})
     {
         tft->fillRect(x, y, size.x, size.y, color);
     }
 }
 bool Rectangle::isInRange()
 {
-    int x = round(position.x - (size.x / 2));
-    int y = round(position.y - (size.y / 2));
     //Serial.printf("y: %d, size.y: %d", (int)y, int(size.y));
-    return x < tft->width() && (x + size.x) > 0 && y < (tft->height() - ( size.y / 2)) && (y + size.y) > 0;
+    return (position.x - size.x / 2) < tft->width() && (position.x + size.x / 2) > 0 && (position.y - size.y / 2) < (tft->height() - ( size.y / 2)) && (position.y + size.y / 2) > 0;
 }
 
 Rectangle::~Rectangle()

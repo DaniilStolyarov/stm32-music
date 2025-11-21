@@ -38,7 +38,7 @@ void SheetPlayer::play()
         }
         else
         {
-            Serial.printf("Playing note: %d\n", sheet.currentNoteIndex);
+            //Serial.printf("Playing note: %d\n", sheet.currentNoteIndex);
             if (sheetNote.isPause)
             {
                 tonePlayer->stopPlaying();

@@ -22,11 +22,19 @@ typedef struct Vector2f
         return Vector2f{this->x + r.x, this->y + r.y};
     }
 
+    Vector2f operator- (Vector2f const& r) const 
+    {
+        return Vector2f{this->x - r.x, this->y - r.y};
+    }
+
     Vector2f operator* (float const& r) const 
     {
         return Vector2f{this->x * r, this->y * r};
     }
-
+    float size()
+    {
+        return sqrt(this->x*this->x + this->y * this->y);
+    }
 };
 
 

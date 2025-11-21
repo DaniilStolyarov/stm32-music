@@ -4,9 +4,9 @@
 
 TonePlayer::TonePlayer()
 {
+    //SystemClockValue = F_CPU / 1000000;
+    //Serial.printf("Using Core Frequency:\t%d MHz\n", SystemClockValue);
     SystemClock_Config();
-    SystemClockValue = F_CPU / 1000000;
-    Serial.printf("Using Core Frequency:\t%d MHz\n", SystemClockValue);
 }
 
 void TonePlayer::init()

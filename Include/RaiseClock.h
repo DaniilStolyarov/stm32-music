@@ -2,10 +2,10 @@
 #define RAISE_CLOCK_H
 
 #include <Arduino.h>
-
 void SystemClock_Config(void)
 {
-    Serial.begin(115200);
+    __HAL_FLASH_PREFETCH_BUFFER_ENABLE();
+    Serial.begin(320);
     RCC_OscInitTypeDef RCC_OscInitStruct = {0};
     RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
@@ -15,8 +15,8 @@ void SystemClock_Config(void)
     RCC_OscInitStruct.HSIState = RCC_HSI_ON;  // HSI можно оставить
     RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
     RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE; // источник HSE
-    RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9; // умножаем на 9
-    if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+    RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL16; // умножаем на 9
+    if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)    
     {
         while(1); // ошибка
     }
@@ -28,7 +28,7 @@ void SystemClock_Config(void)
     RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
     RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;  // APB1 max 36 MHz
     RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;  // APB2 max 72 MHz
-    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, (0x2UL << FLASH_ACR_LATENCY_Pos) ) != HAL_OK)
     {
         while(1); // ошибка
     }
