@@ -22,7 +22,7 @@ private:
     
     NoteDef* noteDef;
 
-    int transitionDelay = 16;
+    int transitionDelay = 5;
 public:
     Sheet* sheets;
     int beat = 1600;

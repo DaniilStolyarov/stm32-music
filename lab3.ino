@@ -8,13 +8,16 @@
 #include "Include/Rectangle.h"
 #include "Include/LinkedList.h"
 #include "Include/Player.h"
-#include "Include/DebugSong.h"
+#include "Include/Megalovania.h"
+#include "Include/Giorno.h"
+
 #include "Include/Scorer.h"
 
 #define RECT_WIDTH 25
 #define RECT_HEIGHT 25
-#define NOTE_SPEED 1000
-#define BEAT 1024
+#define NOTE_SPEED 180
+#define BEAT 2048
+#define PLAYER_SPEED 850
 MCUFRIEND_kbv tft;
 Input input;
 TonePlayer tonePlayer1;
@@ -89,19 +92,20 @@ void setup()
     }
 
     TonePlayer** tonePlayers = new TonePlayer*[2]{&tonePlayer1, &tonePlayer2};
-    BadAppleArrangement* arrangement = BadAppleSong();
+    GiornoArrangement* arrangement = GiornoSong();
     //DebugSongArrangement* arrangement = DebugSong();
     sheetPlayer = new SheetPlayer(arrangement->sheetCount, tonePlayers, arrangement->sheetArray);
     sheetPlayer->afterNotePlayed = SpawnRectangle;
     sheetPlayer->beat = BEAT;
     player = new Player(&tft, Vector2f{(float)tft.width() / 2, (float)tft.height() - 100});
+    player->movementSpeed = PLAYER_SPEED;
     scorer = new Scorer(&tft);
 }
 uint32_t frames = 0;
 void loop()
 {
     player->update(input.readAxes());
-    if (frames % 1 == 0)
+    if (frames % 2 == 0)
     {
         ListNode<Rectangle>* node = rectList->head;
         while (node)

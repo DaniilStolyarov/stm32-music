@@ -4,8 +4,8 @@
 #include <Arduino.h>
 void SystemClock_Config(void)
 {
-    __HAL_FLASH_PREFETCH_BUFFER_ENABLE();
-    Serial.begin(320);
+   // __HAL_FLASH_PREFETCH_BUFFER_ENABLE();
+    Serial.begin(115200);
     RCC_OscInitTypeDef RCC_OscInitStruct = {0};
     RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 

@@ -4,9 +4,9 @@
 
 TonePlayer::TonePlayer()
 {
-    //SystemClockValue = F_CPU / 1000000;
-    //Serial.printf("Using Core Frequency:\t%d MHz\n", SystemClockValue);
     SystemClock_Config();
+    SystemClockValue = F_CPU / 1000000;
+    //Serial.printf("Using Core Frequency:\t%d MHz\n", SystemClockValue);
 }
 
 void TonePlayer::init()
@@ -25,7 +25,7 @@ void TonePlayer::playTone(uint32_t freq) {
 
     __HAL_TIM_SET_PRESCALER(&htim, prescaler);
     __HAL_TIM_SET_AUTORELOAD(&htim, arr);
-    __HAL_TIM_SET_COMPARE(&htim, TIM_CHANNEL_2, arr / 2);
+    __HAL_TIM_SET_COMPARE(&htim, TIM_CHANNEL_2, arr / 16);
 }
 
 
